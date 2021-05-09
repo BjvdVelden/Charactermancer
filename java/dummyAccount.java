@@ -21,6 +21,7 @@ public class dummyAccount {
         accountLijst.add(persoon4);
     }
 
+
     public static ArrayList<Account> getAccountLijst() {
         return accountLijst;
     }
