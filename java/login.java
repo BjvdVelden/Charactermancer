@@ -9,11 +9,12 @@ public class login {
 
 
     public login(){
-        database database = new database();
-        this.dataLijst = database.dataLijst;
+
     }
 
-    public void startLogin(){
+    public void startLogin(ArrayList<Account> database){
+
+        this.dataLijst = database;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Vul uw gebruikers naam");
@@ -25,15 +26,13 @@ public class login {
             String dataAccountNaam = dataLijst.get(i).getAccountUsername();
             String dataAccountWachtwoord = dataLijst.get(i).getAccountWachtwoord();
 
-            System.out.println(dataAccountNaam);
-            System.out.println(dataAccountWachtwoord);
-
             if (dataAccountNaam.equals(accountNaam) && dataAccountWachtwoord.equals(accountWachtwoord)){
                 this.loggedIn = true;
                 this.accountNaam = accountNaam;
                 this.accountWachtwoord = accountWachtwoord;
 
                 System.out.println("Welkom "+ accountNaam + " !");
+
 
             }
         }
