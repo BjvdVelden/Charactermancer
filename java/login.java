@@ -7,10 +7,10 @@ public class login {
     public ArrayList<Account> dataLijst;
     public boolean loggedIn;
 
+
     public login(){
-        dummyAccount data = new dummyAccount();
-        data.generateAccounts();
-        this.dataLijst = data.getAccountLijst();
+        database database = new database();
+        this.dataLijst = database.dataLijst;
     }
 
     public void startLogin(){

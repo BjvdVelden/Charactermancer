@@ -21,6 +21,10 @@ public class dummyAccount {
         accountLijst.add(persoon4);
     }
 
+    public void voegAccounttoe(Account account){
+        accountLijst.add(account);
+    }
+
     public static ArrayList<Account> getAccountLijst() {
         return accountLijst;
     }
