@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class login {
     public String accountNaam;
@@ -12,7 +13,13 @@ public class login {
         this.dataLijst = data.getAccountLijst();
     }
 
-    public void startLogin(String accountNaam, String accountWachtwoord){
+    public void startLogin(){
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Vul uw gebruikers naam");
+        String accountNaam = scanner.nextLine();
+        System.out.println("Vul uw wachtwoord");
+        String accountWachtwoord = scanner.nextLine();
 
         for (int i = 0; i < this.dataLijst.size(); i++){
             String dataAccountNaam = dataLijst.get(i).getAccountUsername();

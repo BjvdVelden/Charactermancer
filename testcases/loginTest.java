@@ -1,5 +1,7 @@
+// TODO: Test werkend maken, lukt niet op mijn laptop voor nu
+
 package testcases;
-import org.junit.After;
+import java.login;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,8 +22,12 @@ public class loginTest {
     }
 
 
+
     @Test
     public void testCase(){
+        login login = new login();
+        login.startLogin();
+
     Assert.assertEquals("Admin\r\n" +
             "Admin", outputStream.toString()
             .trim());
