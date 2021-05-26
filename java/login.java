@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class login {
-    public String accountNaam;
-    public String accountWachtwoord;
+    private String accountNaam;
+    private String accountWachtwoord;
     public ArrayList<Account> dataLijst;
     public boolean loggedIn;
 
