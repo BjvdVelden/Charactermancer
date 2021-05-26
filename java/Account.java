@@ -1,26 +1,37 @@
+import java.util.ArrayList;
+
 public class Account {
 
-    public String accountUsername;
-    public String accountWachtwoord;
+    private String accountUsername;
+    private String accountWachtwoord;
+
+    private ArrayList<CharacterSheet> characters;
+
+
 
     public Account(String accountUsername, String accountWachtwoord){
         this.accountUsername = accountUsername;
         this.accountWachtwoord = accountWachtwoord;
+        this.characters = new ArrayList<>();
     }
 
     public String getAccountUsername() {
         return accountUsername;
     }
 
-    public void setAccountUsername(String accountUsername) {
-        this.accountUsername = accountUsername;
-    }
-
     public String getAccountWachtwoord() {
         return accountWachtwoord;
     }
 
-    public void setAccountWachtwoord(String accountWachtwoord) {
-        this.accountWachtwoord = accountWachtwoord;
+    public void getCharacters(){
+
+        if (characters.size() < 1) {
+            System.out.println("Je heb nog geen characters gemaakt!");
+        }
+        else {
+            for (int i = 0; i < this.characters.size(); i++){
+                this.characters.get(i).showCharactersheet();
+            }
+        }
     }
 }

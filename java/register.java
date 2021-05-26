@@ -1,15 +1,11 @@
 import java.util.Scanner;
-
 public class register {
-
-    public String accountNaam;
-    public String accountWachtwoord;
+    private String accountNaam;
+    private String accountWachtwoord;
 
     public register(){
 
     }
-
-
     public Account startRegistratie(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Voer uw accountnaam in");
@@ -20,7 +16,6 @@ public class register {
         if(input1.equals("stop") || input2.equals("stop")){
             System.exit(1);
         }
-
 
         if(inputChecker(input1) || inputChecker(input2) ){
             if(wachtwoordChecker(input2)){

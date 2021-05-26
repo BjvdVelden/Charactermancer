@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class menu {
-    boolean start = true;
+    public boolean start = true;
 
     public menu() {
         database database = new database();
@@ -38,7 +38,7 @@ public class menu {
             switch (antwoord2) {
                 case "show alle gebruikers":
                     database.showAccounts();
-                    break;
+
                 case "stop":
                     database.setLoggedIn(false);
                     break;
