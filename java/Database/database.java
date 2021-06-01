@@ -1,8 +1,13 @@
+package Database;
+
+import Account.Account;
+
 import java.util.ArrayList;
 
 public class database {
 
     private boolean loggedIn;
+    private Account account;
 
     private ArrayList<Account> dataLijst;
 
@@ -28,6 +33,16 @@ public class database {
             System.out.println("----");
         }
     }
+
+    public Account getAccount(String accountnaam, String accounwachtwoord){
+        for (int i = 0; i < this.dataLijst.size(); i++){
+            if (dataLijst.get(i).getAccountUsername().equals(accountnaam) && dataLijst.get(i).getAccountWachtwoord().equals(accounwachtwoord)){
+                return dataLijst.get(i);
+            }
+        }
+        return null;
+    }
+
 
     public boolean isLoggedIn() {
         return loggedIn;

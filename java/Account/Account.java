@@ -1,9 +1,12 @@
+package Account;
+import CharacterSheet.CharacterSheet;
 import java.util.ArrayList;
 
 public class Account {
 
     private String accountUsername;
     private String accountWachtwoord;
+    private String donateRanking;
 
     private ArrayList<CharacterSheet> characters;
 
@@ -21,6 +24,14 @@ public class Account {
 
     public String getAccountWachtwoord() {
         return accountWachtwoord;
+    }
+
+    public void setDonateRanking(String donateRanking) {
+        this.donateRanking = donateRanking;
+    }
+
+    public void setCharacters(CharacterSheet character) {
+        this.characters.add(character);
     }
 
     public void getCharacters(){
