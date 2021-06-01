@@ -1,3 +1,9 @@
+package Menu;
+
+import Database.database;
+import LoginSysteem.login;
+import LoginSysteem.register;
+
 import java.util.Scanner;
 
 public class menu {

@@ -1,3 +1,5 @@
+package CharacterSheet;
+
 import java.util.Scanner;
 
 public class CharacterSheet {
