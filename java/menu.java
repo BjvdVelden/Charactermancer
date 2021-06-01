@@ -42,6 +42,9 @@ public class menu {
                 case "stop":
                     database.setLoggedIn(false);
                     break;
+                case "start charactermancer":
+                     CharacterSheet character = new CharacterSheet(login.account);
+                    break;
                 default:
                     System.out.println("Input niet herkend!");
             }
