@@ -3,12 +3,11 @@ package LoginSysteem;
 import Account.Account;
 
 import java.util.Scanner;
-public class register {
+public class registerFunction {
     private String accountNaam;
     private String accountWachtwoord;
 
-    public register(){
-
+    public registerFunction(){
     }
     public Account startRegistratie(){
         Scanner scanner = new Scanner(System.in);
@@ -45,8 +44,19 @@ public class register {
             return true;
             }
         }
-        return true;
+        return false;
     }
+
+    public boolean checkStringSize(String input){
+        if (input.length() < 21){
+            return true;
+        }
+        else{
+            System.out.println("Je Inlognaam is groter dan 21 tekens");
+            return false;
+        }
+    }
+
 
     public boolean wachtwoordChecker(String wachtwoord){
        String string = wachtwoord;
@@ -72,4 +82,6 @@ public class register {
         System.out.println("Je moet minimaal 1 hoofletter, kleine letter en cijfer hebben in jouw wachtwoord!");
        return false;
     }
+
+
 }

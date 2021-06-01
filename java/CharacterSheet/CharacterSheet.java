@@ -25,7 +25,7 @@ public class CharacterSheet {
     private int characterWis;
     private int characterCha;
 
-    public CharacterSheet() {
+    public CharacterSheet(Account account) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wat is de speler zijn naam");
         this.playerName = scanner.nextLine().toLowerCase();
@@ -52,7 +52,6 @@ public class CharacterSheet {
         this.characterInt = scanner.nextInt();
         System.out.println("Wat is de character zijn Charisma");
         this.characterCha = scanner.nextInt();
-
     }
 
 

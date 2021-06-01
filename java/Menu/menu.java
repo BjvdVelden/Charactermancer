@@ -12,7 +12,7 @@ public class menu {
     public menu() {
         database database = new database();
         login login = new login();
-        register register = new register();
+        registerFunction registerFunction = new registerFunction();
 
         System.out.println("Welkom bij de Charactermancer!");
         System.out.println("Wil je inloggen of registreren?");
@@ -27,7 +27,7 @@ public class menu {
                      this.start = false;
                      break;
                  case "registreren":
-                     database.addToDatabase(register.startRegistratie());
+                     database.addToDatabase(registerFunction.startRegistratie());
                      database.setLoggedIn(true);
                      this.start = false;
                      break;
@@ -47,6 +47,9 @@ public class menu {
 
                 case "stop":
                     database.setLoggedIn(false);
+                    break;
+                case "start charactermancer":
+                     CharacterSheet character = new CharacterSheet(login.account);
                     break;
                 default:
                     System.out.println("Input niet herkend!");
