@@ -1,2 +1,54 @@
-package LoginSysteem;public class LoginSingleton {
+package LoginSysteem;
+
+import Account.Account;
+import Database.Database;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class LoginSingleton {
+    private static LoginSingleton Singleton;
+    private ArrayList<Account> accounts;
+    private Boolean isLoggedIn = false;
+    private String accountNaam;
+    private String accountWachtwoord;
+    private boolean loggedIn;
+    private Account account;
+
+    private LoginSingleton(){
+        Database database = new Database();
+        this.accounts = database.getAccounts();
+    }
+
+    public static LoginSingleton getInstantiate(){
+        if(Singleton == null){
+            Singleton = new LoginSingleton();
+        }
+        return Singleton;
+    }
+
+    protected void Login(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Vul uw gebruikers naam");
+        String accountNaam = scanner.nextLine();
+        System.out.println("Vul uw wachtwoord");
+        String accountWachtwoord = scanner.nextLine();
+
+        for (int i = 0; i < this.accounts.size(); i++){
+            String dataAccountNaam = accounts.get(i).getAccountUsername();
+            String dataAccountWachtwoord = accounts.get(i).getAccountWachtwoord();
+
+            if (dataAccountNaam.equals(accountNaam) && dataAccountWachtwoord.equals(accountWachtwoord)){
+                this.account = accounts.get(i);
+                this.loggedIn = true;
+                this.accountNaam = accountNaam;
+                this.accountWachtwoord = accountWachtwoord;
+                System.out.println("Welkom "+ accountNaam + " !");
+            }
+        }
+
+        if (!loggedIn){
+            System.out.println("accountnaam of wachtwoord klopt niet.");
+        }
+    }
 }

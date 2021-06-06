@@ -1,17 +1,20 @@
 package Menu;
 
-import Database.database;
+import CharacterSheet.CharacterSheet;
+import Database.Database;
+import LoginSysteem.LoginSingleton;
 import LoginSysteem.login;
-import LoginSysteem.register;
+import LoginSysteem.registerFunction;
 
 import java.util.Scanner;
 
 public class menu {
-    public boolean start = true;
+    public boolean start;
 
     public menu() {
-        database database = new database();
-        login login = new login();
+        Database database = new Database();
+
+        loginSingleton.getInstantiate();
         registerFunction registerFunction = new registerFunction();
 
         System.out.println("Welkom bij de Charactermancer!");
@@ -22,7 +25,7 @@ public class menu {
              String antwoord = scanner.nextLine().toLowerCase();
              switch (antwoord) {
                  case "inloggen":
-                     login.startLogin(database.getDataLijst());
+                     login.startLogin(database.getAccounts());
                      database.setLoggedIn(true);
                      this.start = false;
                      break;
