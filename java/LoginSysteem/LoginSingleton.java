@@ -2,9 +2,9 @@ package LoginSysteem;
 
 import Account.Account;
 import Database.Database;
-
 import java.util.ArrayList;
-import java.util.Scanner;
+
+
 
 class LoginSingleton {
     private static LoginSingleton Singleton;
@@ -27,12 +27,9 @@ class LoginSingleton {
         return Singleton;
     }
 
-    protected void Login(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Vul uw gebruikers naam");
-        String accountNaam = scanner.nextLine();
-        System.out.println("Vul uw wachtwoord");
-        String accountWachtwoord = scanner.nextLine();
+    public void Login(String accountNaam, String accountWachtwoord){
+        this.accountNaam = accountNaam;
+        this.accountWachtwoord = accountWachtwoord;
 
         for (int i = 0; i < this.accounts.size(); i++){
             String dataAccountNaam = accounts.get(i).getAccountUsername();
@@ -51,4 +48,23 @@ class LoginSingleton {
             System.out.println("accountnaam of wachtwoord klopt niet.");
         }
     }
+
+    public void Register(String AccountNaam, String accountWachtwoord){
+        Account account = new Account(AccountNaam, accountWachtwoord);
+        this.accountNaam = AccountNaam;
+        this.accountWachtwoord = accountWachtwoord;
+        this.accounts.add(account);
+        this.loggedIn = true;
+    }
+
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void logOut(){
+        this.loggedIn = false;
+    }
+
+
 }
