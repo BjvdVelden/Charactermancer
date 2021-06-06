@@ -4,40 +4,40 @@ import Account.Account;
 
 import java.util.ArrayList;
 
-public class database {
+public class Database {
 
     private boolean loggedIn;
     private Account account;
 
-    private ArrayList<Account> dataLijst;
+    private ArrayList<Account> accounts;
 
-    public database(){
+    public Database(){
         dummyAccount dummyAccount = new dummyAccount();
         dummyAccount.generateAccounts();
         dummyAccount data = new dummyAccount();
         data.generateAccounts();
-        this.dataLijst = data.getAccountLijst();
+        this.accounts = data.getAccountLijst();
     }
     public void addToDatabase(Account account){
-        this.dataLijst.add(account);
+        this.accounts.add(account);
     }
 
-    public ArrayList<Account> getDataLijst() {
-        return dataLijst;
+    public ArrayList<Account> getAccounts() {
+        return accounts;
     }
 
     public void showAccounts(){
-        for (int i = 0; i < this.dataLijst.size(); i++){
-            System.out.println(this.dataLijst.get(i).getAccountUsername());
-            System.out.println(this.dataLijst.get(i).getAccountWachtwoord());
+        for (int i = 0; i < this.accounts.size(); i++){
+            System.out.println(this.accounts.get(i).getAccountUsername());
+            System.out.println(this.accounts.get(i).getAccountWachtwoord());
             System.out.println("----");
         }
     }
 
     public Account getAccount(String accountnaam, String accounwachtwoord){
-        for (int i = 0; i < this.dataLijst.size(); i++){
-            if (dataLijst.get(i).getAccountUsername().equals(accountnaam) && dataLijst.get(i).getAccountWachtwoord().equals(accounwachtwoord)){
-                return dataLijst.get(i);
+        for (int i = 0; i < this.accounts.size(); i++){
+            if (accounts.get(i).getAccountUsername().equals(accountnaam) && accounts.get(i).getAccountWachtwoord().equals(accounwachtwoord)){
+                return accounts.get(i);
             }
         }
         return null;
