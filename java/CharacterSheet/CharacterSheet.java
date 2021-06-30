@@ -1,6 +1,11 @@
 package CharacterSheet;
 
+import Account.Account;
+
 import java.util.Scanner;
+
+
+//TODO Abstracte class hiervan maken, zorgen dat je uit iets moet kiezen wat zorgt dat er iets verandert of anders berekent wordt;
 
 public class CharacterSheet {
 
